@@ -13,21 +13,21 @@ try:
     with open("country_full.csv") as file:
         file_reader = csv.DictReader(file)
 
-    # Split the file into the required columns 
-    for line in file_reader:
-        country_name = line["name"]
-        region_name = line["region"]
-
-        region_name = region_name.strip()
-
-        if region_name not in countries:
-            countries[region_name] = []
+        # Split the file into the required columns 
+        for line in file_reader:
+            country_name = line["name"]
+            region_name = line["region"]
     
-    # Sorts through each country
-        countries[region_name].append({
-            'name': country_name.strip(),
-            'region': region_name
-        })
+            region_name = region_name.strip()
+    
+            if region_name not in countries:
+                countries[region_name] = []
+        
+        # Sorts through each country
+            countries[region_name].append({
+                'name': country_name.strip(),
+                'region': region_name
+            })
 
     # Write portion
     # Loop to retrieve both region name and country list 
